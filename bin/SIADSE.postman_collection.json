@@ -1,0 +1,826 @@
+{
+	"info": {
+		"_postman_id": "1cf99c2e-8a9c-46df-be79-d85791d07239",
+		"name": "SIADSE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27039415"
+	},
+	"item": [
+		{
+			"name": "ADMIN",
+			"item": [
+				{
+					"name": "CREAR SEMILLERO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Semillero de Tecnología\",\r\n  \"descripcion\": \"Semillero dedicado a proyectos innovadores en el área de la tecnología.\",\r\n  \"fechaCreacion\": \"2024-04-30T12:00:00Z\",\r\n  \"fechaActualizacion\": \"2024-04-30T12:00:00Z\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/semilleros",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"semilleros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear Proyectos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"projectName\": \"Nuevo Proyecto\",\r\n  \"archivo\": \"ruta/al/archivo\",\r\n  \"imagen\": \"ruta/a/imagen\",\r\n  \"categoria\": {\r\n    \"id\": 1,\r\n    \"nombre\": \"IA\"\r\n  },\r\n  \"projectLeader\": {\r\n    \"id\": 1,\r\n    \"name\": \"jonny\"\r\n  },\r\n  \"semillero\": {\r\n    \"id\": 1,\r\n    \"nombre\": \"Semillero de Inteligencia Artificial/ CHAT GPT\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/projects",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un proyecto por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/projects/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"projects",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "No funciona ACTUALIZAR UN PROYECTO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\": 1,\r\n  \"projectName\": \"bUEN NOMBRE XD\",\r\n  \"archivo\": \"ruta/al/archivo\",\r\n  \"imagen\": \"ruta/a/imagen\",\r\n  \"categoria\": {\r\n    \"id\": 1,\r\n    \"nombre\": \"IA\"\r\n  },\r\n  \"projectLeader\": {\r\n    \"id\": 1,\r\n    \"name\": \"jonny\"\r\n  },\r\n  \"semillero\": {\r\n    \"id\": 1,\r\n    \"nombre\": \"Semillero de Inteligencia Artificial/ CHAT GPT\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/projects/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"projects",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OBTENER TODOS LOS PROYECTOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/projects",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "registro de usuarios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Andres Portill2a\",// UNIQUE\r\n    \"name\": \"ANDRES2\",\r\n    \"email\": \"Andre1s@example.com\",// UNIQUE\r\n    \"password\": \"securePassword123\",\r\n    \"codigoUniversidad\": \"U126457\",\r\n    \"semestreActual\": 5,\r\n    \"edad\": 22,\r\n    \"direccionResidencia\": \"1234 Calle Ficticia\",\r\n    \"celular\": \"3210001342\",\r\n    \"role\": {\r\n        \"id\": 2,\r\n        \"name\": \"DIRECTOR\"\r\n    },\"loggedIn\": false\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"Andres@example.com\",\r\n    \"password\": \"securePassword1213\"\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cerrar seccion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"2\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/users/logout?email=Perreo@example.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "Perreo@example.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DIRECTOR",
+			"item": [
+				{
+					"name": "CREAR SEMILLERO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Semillero de Tecnología y TIc\",\r\n  \"descripcion\": \"Semillero dedicado a proyectos innovadores en el área de la tecnología.\",\r\n  \"fechaCreacion\": \"2024-04-30T12:00:00Z\",\r\n  \"fechaActualizacion\": \"2024-04-30T12:00:00Z\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/semilleros",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"semilleros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Asignar un Director a un Semillero",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/semilleros/director?semillero=1&director=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"semilleros",
+								"director"
+							],
+							"query": [
+								{
+									"key": "semillero",
+									"value": "1"
+								},
+								{
+									"key": "director",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar SEMILLERO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Semillero de Inteligencia Artificial/ CHAT GPT\",\r\n  \"descripcion\": \"Enfocado en desarrollar capacidades en IA y machine learning.\",\r\n  \"fechaCreacion\": \"2024-04-30T12:00:00Z\",\r\n  \"fechaActualizacion\": \"2024-05-01T15:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/semilleros/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"semilleros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET SEMILLERO",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/semilleros/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"semilleros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELiminar Semillero No la probe pero  seguro sirve xddd",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/semilleros/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"semilleros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TODOS LOS SEMILLEROS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/semilleros",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"semilleros"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ARCHIVOS",
+			"item": [
+				{
+					"name": "delete album",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "file",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/public/album?albumId=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"public",
+								"album"
+							],
+							"query": [
+								{
+									"key": "albumId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subir normatividad",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "semilleroId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Usuario/Downloads/ingenieria de sistemas.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/public/regulation",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"public",
+								"regulation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get albums",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/public/album",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"public",
+								"album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get files by album",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "file",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/public/media/album?albumId=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"public",
+								"media",
+								"album"
+							],
+							"query": [
+								{
+									"key": "albumId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload file to album",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "file",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Usuario/Downloads/ingenieria de sistemas.jpg"
+								},
+								{
+									"key": "albumId",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "titulo",
+									"value": "Logo Ing de Sistemas",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/public/media/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"public",
+								"media",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create album",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Prueba\",\r\n  \"descripcion\": \"El dia 18 de Marzo, se llevo a cabo en el auditorio de la bibliteca Eduardo Cote Lamus la presentación de los semilleros de investigación de ing de sistemas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/public/album",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"public",
+								"album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete file",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "file",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Usuario/Downloads/logo_vertical_ingsistemas_ht180.png"
+								},
+								{
+									"key": "albumId",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "titulo",
+									"value": "Logo Ing de Sistemas",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/public/media?contentId=4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"public",
+								"media"
+							],
+							"query": [
+								{
+									"key": "contentId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PQRS",
+			"item": [
+				{
+					"name": "LISTAR PQRS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6060/pqrs",
+							"host": [
+								"localhost"
+							],
+							"port": "6060",
+							"path": [
+								"pqrs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR PQRS",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1ZnBzLmNvIiwiaWF0IjoxNzEzMzk2OTE2LCJleHAiOjE3MTM0ODMzMTZ9.wdedEq9cTahO7vwCcaETFmiRWb4ZtEDGmfoUOFTDI4k",
+								"type": "text",
+								"uuid": "4736f608-1bf8-44e2-a394-8b89f10afd0f",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:6060/pqrs/delete?pqrsID=1",
+							"host": [
+								"localhost"
+							],
+							"port": "6060",
+							"path": [
+								"pqrs",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "pqrsID",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CAMBIO DE ESTADO A REVISION, LUEGO A RESUELTO ANTES DE DELETE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1ZnBzLmNvIiwiaWF0IjoxNzEzMzk2OTE2LCJleHAiOjE3MTM0ODMzMTZ9.wdedEq9cTahO7vwCcaETFmiRWb4ZtEDGmfoUOFTDI4k",
+								"type": "text",
+								"uuid": "06f25501-5c3b-447b-81bd-6fa3b2a6c2e9",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:6060/pqrs/resuelto?pqrsId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "6060",
+							"path": [
+								"pqrs",
+								"resuelto"
+							],
+							"query": [
+								{
+									"key": "pqrsId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREAR PQRS CON TIPO PQR",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 0afb3af6-5c93-4b31-8a7f-41d2685c8d60",
+								"description": "admin",
+								"type": "text",
+								"uuid": "a397737b-d71a-4bd2-9691-e2b90a3b3e2f",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb25ueWphaW1lc0B1ZnBzLmNvIiwiaWF0IjoxNzEyMDc1MTI1LCJleHAiOjE3MTIxNjE1MjV9.RkMD3SK-pNBKMpcXkGG0J7ApPaZ8AwagbeFZEUZTsQM",
+								"description": "user",
+								"type": "text",
+								"uuid": "a397737b-d71a-4bd2-9691-e2b90a3b3e2f",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"hola\",\r\n    \"descripcion\": \"hola\",\r\n    \"correo\": \"hola\",\r\n    \"anonimo\": true,\r\n    \"nombre\": \"\",\r\n    \"apellido\": \"\",\r\n    \"cedula\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6060/pqrs/create?tipoPQRSID=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6060",
+							"path": [
+								"pqrs",
+								"create"
+							],
+							"query": [
+								{
+									"key": "semilleroID",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "tipoPQRSID",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
